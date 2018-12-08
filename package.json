@@ -1,0 +1,22 @@
+{
+  "name": "decentralizedstarnotary",
+  "version": "1.0.0",
+  "description": "A star notary service that allows users to prove they own an authenticated star!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aosanya/DecentralizedStarNotary.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aosanya/DecentralizedStarNotary/issues"
+  },
+  "homepage": "https://github.com/aosanya/DecentralizedStarNotary#readme",
+  "dependencies": {
+    "openzeppelin-solidity": "2.0.0-rc.1"
+  }
+}
