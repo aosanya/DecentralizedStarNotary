@@ -20,7 +20,7 @@ contract StarNotary is ERC721 {
     event informBytes(bytes _info);
 
     function createStar(string _name,string _starStory,string _ra,string _dec,string _mag, uint256 _tokenId) public {
-        bytes32 key = sha256(abi.encodePacked(_ra, _dec, _mag));
+        bytes32 key = keccak256(abi.encodePacked(_ra, _dec, _mag));
         emit inform(_tokenId);
         require(tokenExists[key] == false, "Error : Star already exists!");
         Star memory newStar = Star(_name, _starStory, _ra, _dec, _mag);

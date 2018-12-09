@@ -21,6 +21,7 @@ contract('StarNotary', accounts => {
         it('can create a star and get its name', async function () {
             await starInstance.createStar(name, starStory, ra, dec, mag, starId)
             let starInfo = await starInstance.tokenIdToStarInfo(1)
+            console.log(starInfo)
             assert.equal(starInfo[0], name)
         })
     })

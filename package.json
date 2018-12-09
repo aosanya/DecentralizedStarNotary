@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/aosanya/DecentralizedStarNotary#readme",
   "dependencies": {
-    "openzeppelin-solidity": "2.0.0-rc.1"
+    "openzeppelin-solidity": "2.0.0-rc.1",
+    "truffle-hdwallet-provider": "0.0.6"
   }
 }

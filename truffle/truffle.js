@@ -11,6 +11,9 @@
  *     gasPrice: 10000000000,
  *   },
  */
+var HDWalletProvider = require('truffle-hdwallet-provider');
+
+var mnemonic = 'permit bulb infant unlock toward orphan diet three siren crowd crowd item';
 
 module.exports = {
   networks: {
@@ -19,12 +22,14 @@ module.exports = {
       port: 9545,
       network_id: "*" // Match any network id
     },
-    rinkeby: {
-      host: "localhost", //local node
-      port: 8545, // connection port
-      network_id: 4, // network id for test networks
-      gas: 4700000 // gas limit
-    },
+    // rinkeby: {
+    //   provider: function() {
+    //     return new HDWalletProvider(mnemonic, 'https://rinkeby.infura.io/v3/1446d338401b4c2da4f63960a533a88b')
+    //   },
+    //   network_id: '4',
+    //   gas: 4500000,
+    //   gasPrice: 10000000000,
+    // },
     compilers: {
       solc: {
         version: "0.4.23"  // ex:  "0.4.20". (Default: Truffle's installed solc)
@@ -32,11 +37,3 @@ module.exports = {
     }
   }
 };
-
-
-// rinkeby: {
-//   host: "localhost", //local node
-//   port: 8545, // connection port
-//   network_id: 4, // network id for test networks
-//   gas: 4700000 // gas limit
-// },
