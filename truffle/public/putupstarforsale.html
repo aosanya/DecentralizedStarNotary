@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Star Notary</title>
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+        <script src="./js/abi.js"></script>
+        <script src="./js/putUpStarForSale.js"></script>
+    </head>
+    <body>
+
+        <div class="container">
+            <nav class='nav'>
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            Claim Star
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lookup.html"  >
+                            Look Up Star
+                        </a>
+                    </li>
+                    <li>
+                        <a href="putupstarforsale.html" class='active'>
+                            Put Up Star For Sale
+                        </a>
+                    </li>
+                    <li>
+                        <a href="buyStar.html">
+                            Buy Star
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="form">
+                <p>
+                    <textarea name="address" cols="40" rows="2" maxlength="250" required="" placeholder="Enter public address here..." class="textarea">0xb60ab9d5372C64f5f9056BA95Bb8AB93e036b4DD</textarea>
+                </p>
+                <p>Star Id <input type="number" name="starId" style="width: 200px" value="1544385961929"></p>
+                <p>Price(in ether) <input type="number" name="price" style="width: 200px" value="1"></p>
+                <p>
+                    <button id="claim-button" onclick="putUpStarForSale()" class="btn">Put Up Star For Sale</button>
+                    <label id="msg"></label>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

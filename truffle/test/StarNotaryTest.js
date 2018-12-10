@@ -8,9 +8,10 @@ contract('StarNotary', accounts => {
 
     let name = 'awesome star!'
     let starStory = "this star was bought for my wife's birthday"
-    let ra = "1"
-    let dec = "1"
-    let mag = "1"
+
+    let ra = "dec_1° 1' 1"
+    let mag = "mag_1"
+    let dec = "ra_1h 1m 1s"
     let starId = 1
     var starInstance
     beforeEach(async function() {
@@ -21,8 +22,40 @@ contract('StarNotary', accounts => {
         it('can create a star and get its name', async function () {
             await starInstance.createStar(name, starStory, ra, dec, mag, starId)
             let starInfo = await starInstance.tokenIdToStarInfo(1)
-            console.log(starInfo)
             assert.equal(starInfo[0], name)
+        })
+    })
+
+    describe('can create a star production ids', () => {
+        it('can create a star and get its name', async function () {
+            let ra2 = "dec_2° 2' 2"
+            let mag2 = "mag_2"
+            let dec2 = "ra_2h 2m 2s"
+            const d = new Date();
+            const id2 = d.getTime();
+            await starInstance.createStar(name, starStory, ra2, dec2, mag2, id2)
+            let starInfo = await starInstance.tokenIdToStarInfo(id2)
+            assert.equal(starInfo[0], name)
+        })
+    })
+
+    describe('can check is star exists', () => {
+        it('can create a star and confirm it exists', async function () {
+            let ra2 = "dec_2° 2' 2"
+            let mag2 = "mag_2"
+            let dec2 = "ra_2h 2m 2s"
+            const d = new Date();
+            const id2 = d.getTime();
+            await starInstance.createStar(name, starStory, ra2, dec2, mag2, id2)
+            let exists = await starInstance.checkIfStarExist(ra2, dec2, mag2)
+            assert.isTrue(exists)
+        })
+        it('confirm star does not exist', async function () {
+            let ra2 = "dec_3° 2' 2"
+            let mag2 = "mag_3"
+            let dec2 = "ra_3h 2m 2s"
+            let exists = await starInstance.checkIfStarExist(ra2, dec2, mag2)
+            assert.isFalse(exists)
         })
     })
 
@@ -61,8 +94,6 @@ contract('StarNotary', accounts => {
                 await starInstance.createStar(name, starStory, newRa, newDec, newMag, id, {from: user1})
                 let starInfo = await starInstance.tokenIdToStarInfo(id)
                 assert.equal(starInfo[0], name)
-
-
             }
         })
     })
@@ -113,8 +144,43 @@ contract('StarNotary', accounts => {
                 let actualCost = actualBalance - balanceAfter
                 let expectedGasPrice = actualCost - starPrice
                 let actualGasUsed = web3.eth.getBlock(web3.eth.blockNumber).gasUsed
-                let weiGasUsed = web3.toWei(actualGasUsed, "Gwei")
+                //let weiGasUsed = web3.toWei(actualGasUsed, "Gwei")
+                assert.equal(actualGasUsed, Number((expectedGasPrice/100000000000).toFixed(0)), "Gas difference can only stem from wrong account transfers")
+            })
+        })
+    })
 
+    describe('buying and selling stars as in frontend', () => {
+
+        let starPrice = 500000000//web3.toWei(1, "wei")
+
+        let ra3 = "dec_13° 13' 13"
+        let mag3 = "mag_13"
+        let dec3 = "ra_13h 13m 13s"
+        let starId3 = 3
+
+        beforeEach(async function () {
+            await starInstance.createStar(name, starStory, ra3, dec3, mag3, starId3, {from: user2})
+        })
+
+        it('user1 can put up their star for sale', async function () {
+            starInstance.putStarUpForSale(starId3, starPrice, {from: user2}, function(error, result){
+            if(!error){
+                starInstance.starsForSale(starId3, function(error, result){
+                    assert.equal(result, starPrice)
+                    return
+                })
+            }
+            assert.fail('expected an error, but none was found' + error);
+            })
+        })
+
+        describe('user2 can buy a star that was put up for sale', () => {
+            it('user2 is the owner of the star after they buy it', async function() {
+                await starInstance.putStarUpForSale(starId3, starPrice, {from: user2})
+                assert.equal(await starInstance.ownerOf(starId3), user2)
+                await starInstance.buyStar(starId3, {from: user1, value: starPrice})
+                assert.equal(await starInstance.ownerOf(starId3), user1)
             })
         })
     })

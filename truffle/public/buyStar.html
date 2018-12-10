@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Star Notary</title>
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+        <script src="./js/abi.js"></script>
+        <script src="./js/buyStar.js"></script>
+    </head>
+    <body>
+
+        <div class="container">
+            <nav class='nav'>
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            Claim Star
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lookup.html"  >
+                            Look Up Star
+                        </a>
+                    </li>
+                    <li>
+                        <a href="putupstarforsale.html">
+                            Put Up Star For Sale
+                        </a>
+                    </li>
+                    <li>
+                        <a href="buyStar.html" class='active'>
+                            Buy Star
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="form">
+                <p>
+                    <textarea name="address" cols="40" rows="2" maxlength="250" required="" placeholder="Enter public address here..." class="textarea"></textarea>
+                </p>
+                <p>Star Id <input type="number" name="starId" style="width: 100px" value=""></p>
+                <p>
+                    <button id="claim-button" onclick="buyStar()" class="btn">Buy Star</button>
+                    <label id="msg"></label>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

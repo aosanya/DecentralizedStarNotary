@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Search Star</title>
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+        <script src="./js/abi.js"></script>
+        <script src="./js/lookupStar.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <nav class='nav'>
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            Claim Star
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lookup.html"  class='active'>
+                            Look Up Star
+                        </a>
+                    </li>
+                    <li>
+                        <a href="putupstarforsale.html">
+                            Put Up Star For Sale
+                        </a>
+                    </li>
+                    <li>
+                        <a href="buyStar.html">
+                            Buy Star
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="form">
+
+                <p>
+                    <textarea name="starId" cols="40" rows="1" maxlength="100" required="" placeholder="Enter Star Id Here..." class="textarea"></textarea>
+                    <br>
+                    <button id="claim-button" onclick="lookupStar()" class="btn">Lookup Star</button>
+                    <br><label id="msg"></label>
+                    <div class="divTable">
+                        <div class="divTableBody">
+                            <div class="divTableRow">
+                                <div class="divTableCell">Details</div>
+                                <div class="divTableCell"><label id="details"></label></div>
+                            </div>
+                            <div class="divTableRow">
+                                <div class="divTableCell">Asking Price</div>
+                                <div class="divTableCell"><label id="price"></label></div>
+                            </div>
+                        </div>
+                    </div>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -10,8 +10,32 @@
         <script src="./js/createStar.js"></script>
     </head>
     <body>
+
         <div class="container">
-            <a href="./search.html">Search Star</a>
+            <nav class='nav'>
+                <ul>
+                    <li>
+                        <a href="index.html" class='active'>
+                            Claim Star
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lookup.html">
+                            Look Up Star
+                        </a>
+                    </li>
+                    <li>
+                        <a href="putupstarforsale.html">
+                            Put Up Star For Sale
+                        </a>
+                    </li>
+                    <li>
+                        <a href="buyStar.html">
+                            Buy Star
+                        </a>
+                    </li>
+                </ul>
+            </nav>
             <div class="form">
                 <h3>Star Notary</h3>
                     <p>
@@ -128,7 +152,7 @@
 
                     <p><textarea name="Story" cols="40" rows="5" maxlength="250" required="" placeholder="Enter Story here..." class="textarea"></textarea></p>
                     <p>
-                        <button id="claim-button" onclick="claimButtonClicked()" class="btn">Claim Star</button>
+                        <button id="claim-button" onclick="createStar()" class="btn">Claim Star</button>
                         <label id="msg"></label>
                     </p>
                 </div>
