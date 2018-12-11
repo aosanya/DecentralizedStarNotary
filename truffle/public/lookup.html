@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="./css/style.css">
         <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
         <script src="./js/abi.js"></script>
+        <script src="./js/web3.js"></script>
         <script src="./js/lookupStar.js"></script>
     </head>
     <body>
@@ -42,18 +43,21 @@
                     <br>
                     <button id="claim-button" onclick="lookupStar()" class="btn">Lookup Star</button>
                     <br><label id="msg"></label>
-                    <div class="divTable">
-                        <div class="divTableBody">
-                            <div class="divTableRow">
-                                <div class="divTableCell">Details</div>
-                                <div class="divTableCell"><label id="details"></label></div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell">Asking Price</div>
-                                <div class="divTableCell"><label id="price"></label></div>
+                    <div id="starDetails" style="display:none">
+                        <div class="divTable container">
+                            <div class="divTableBody">
+                                <div class="divTableRow">
+                                    <div class="divTableCell">Details</div>
+                                    <div class="divTableCell"><label id="details"></label></div>
+                                </div>
+                                <div class="divTableRow">
+                                    <div class="divTableCell">Asking Price</div>
+                                    <div class="divTableCell"><label id="price"></label></div>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </p>
             </div>
         </div>

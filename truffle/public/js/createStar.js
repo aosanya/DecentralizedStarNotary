@@ -1,17 +1,3 @@
-if(typeof web3 != 'undefined') {
-    web3 = new Web3(web3.currentProvider) // what Metamask injected
-    console.log(web3.currentProvider)
-} else {
-    // Instantiate and set Ganache as your provider
-    web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
-}
-// The default (top) wallet account from a list of test accounts
-web3.eth.defaultAccount = web3.eth.accounts[0];
-
-// The interface definition for your smart contract (the ABI)
-var StarNotary = web3.eth.contract(abi)
-var starNotary = StarNotary.at('0xB7FdE4215432B012c3F3E18716760e018e97EEf5');
-
 function createStar(){
     var data = {}
     data.address = document.getElementsByName('address')[0].value;
@@ -36,11 +22,11 @@ function createStar(){
     }
     const d = new Date();
     const id = d.getTime();
-
     if (Conste != '' && Conste != undefined){
         data.star.const = Conste
     }
 
+    console.log(data)
     starNotary.createStar(data.name, data.story, data.star.ra, data.star.dec, data.star.mag, id, {from: data.address}, function(error, result){
     if(!error)
         console.log(JSON.stringify(result));

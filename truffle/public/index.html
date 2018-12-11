@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="./css/style.css">
         <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
         <script src="./js/abi.js"></script>
+        <script src="./js/web3.js"></script>
         <script src="./js/createStar.js"></script>
     </head>
     <body>
@@ -39,21 +40,21 @@
             <div class="form">
                 <h3>Star Notary</h3>
                     <p>
-                        <textarea name="address" cols="40" rows="2" maxlength="250" required="" placeholder="Enter public address here..." class="textarea"></textarea>
+                        <textarea name="address" cols="40" rows="2" maxlength="250" required="" placeholder="Enter public address here..." class="textarea">0xb60ab9d5372C64f5f9056BA95Bb8AB93e036b4DD</textarea>
                     </p>
                     <p>
                         <textarea name="name" cols="40" rows="2" maxlength="250" required="" placeholder="Enter star name here..." class="textarea"></textarea>
                     </p>
                     <p>
                         Right Ascension<span style="padding-right: 10px">
-                            <input type="number" name="RAH" style="width: 50px" required="" value="1"><span>h*</span></span><span style="padding-right: 10px"><input
-                                type="number" name="RAM" style="width: 50px" required="" value="1"><span>m*</span></span><span style="padding-right: 10px"><input
-                                type="number" name="RASEC" style="width: 50px" required="" value="1"><span>sec*</span></span></p>
+                            <input type="number" name="RAH" style="width: 50px" required="" value=""><span>h*</span></span><span style="padding-right: 10px"><input
+                                type="number" name="RAM" style="width: 50px" required="" value=""><span>m*</span></span><span style="padding-right: 10px"><input
+                                type="number" name="RASEC" style="width: 50px" required="" value=""><span>sec*</span></span></p>
                     <p>
                         Declination<span style="padding-right: 10px"><input type="number" name="DecDeg" style="width: 50px" required=""
-                                value="1"><span>deg*</span></span><span style="padding-right: 10px"><input type="number" name="DecMin"
-                                style="width: 50px" required="" value="1"><span>min*</span></span><span style="padding-right: 10px"><input
-                                type="number" name="DecSec" style="width: 50px" required="" value="1"><span>sec*</span></span>
+                                value=""><span>deg*</span></span><span style="padding-right: 10px"><input type="number" name="DecMin"
+                                style="width: 50px" required="" value=""><span>min*</span></span><span style="padding-right: 10px"><input
+                                type="number" name="DecSec" style="width: 50px" required="" value=""><span>sec*</span></span>
                     </p>
                     <p>Magnitude<input type="number" name="MAG" style="width: 50px" value=""></p>
                     <p>Constellation<select name="Conste">

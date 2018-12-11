@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="./css/style.css">
         <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
         <script src="./js/abi.js"></script>
+        <script src="./js/web3.js"></script>
         <script src="./js/putUpStarForSale.js"></script>
     </head>
     <body>
@@ -38,10 +39,10 @@
             </nav>
             <div class="form">
                 <p>
-                    <textarea name="address" cols="40" rows="2" maxlength="250" required="" placeholder="Enter public address here..." class="textarea">0xb60ab9d5372C64f5f9056BA95Bb8AB93e036b4DD</textarea>
+                    <textarea name="address" cols="40" rows="2" maxlength="250" required="" placeholder="Enter public address here..." class="textarea"></textarea>
                 </p>
-                <p>Star Id <input type="number" name="starId" style="width: 200px" value="1544385961929"></p>
-                <p>Price(in ether) <input type="number" name="price" style="width: 200px" value="1"></p>
+                <p>Star Id <input type="number" name="starId" style="width: 250px" value=""></p>
+                <p>Price(in ether) <input type="number" name="price" style="width: 250px" value=""></p>
                 <p>
                     <button id="claim-button" onclick="putUpStarForSale()" class="btn">Put Up Star For Sale</button>
                     <label id="msg"></label>
