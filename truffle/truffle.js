@@ -17,11 +17,11 @@ var mnemonic = 'permit bulb infant unlock toward orphan diet three siren crowd c
 
 module.exports = {
   networks: {
-    development: {
-      host: "127.0.0.1",
-      port: 9545,
-      network_id: "*" // Match any network id
-    },
+    // development: {
+    //   host: "127.0.0.1",
+    //   port: 9545,
+    //   network_id: "*" // Match any network id
+    // },
     rinkeby: {
       provider: function() {
         return new HDWalletProvider(mnemonic, 'https://rinkeby.infura.io/v3/1446d338401b4c2da4f63960a533a88b')

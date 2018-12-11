@@ -10,7 +10,7 @@ Tested functionalities include mint(), approve(), safeTransferFrom(), SetApprova
 The star notary project has Tests in the StarNotaryTest.js test file.
 Tested functionalities include createStar(), putStarUpForSale(), buyStar(), starsForSale(), tokenIdToStarInfo()
 
-# Deploy smart contract on a public test network (Rinkeby)
+# Deployed smart contract on public test network (Rinkeby)
 The deployed contract address is : 0x2C226af7F1dfA445381f02102025b3aB2bcd0418
 Transaction that claims a star : 0x3fe97cdf01d6337d5e01d0e9cf0e18b699471e7d8fde1792ea2d491b10f855aa
 Transaction that buys a star : 0x9f32cb9572a0761d6e873e01270d94d06ff1dc9b6c9132c2395fca3502f8c61f
